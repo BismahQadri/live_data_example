@@ -9,7 +9,7 @@ class MainViewModel : ViewModel() {
     val observeText : LiveData<String>
         get() = _observeTextState
 
-    fun setValue(){
+    fun getValue(){
         _observeTextState.value = "Text Changed"
 
     }
