@@ -1,14 +1,16 @@
 package com.e.livedata
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-
-    private lateinit var observeText: MutableLiveData<String>
+    private val _observeTextState = MutableLiveData<String>()
+    val observeText : LiveData<String>
+        get() = _observeTextState
 
     fun setValue(){
-        observeText.value = "Text Changed"
+        _observeTextState.value = "Text Changed"
 
     }
 }
